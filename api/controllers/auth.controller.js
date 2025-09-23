@@ -33,7 +33,7 @@ export const login = async (req, res, next) => {
         process.env.JWT_KEY);
 
         const { password, ...otherInfo } = user._doc
-        res.cookie("access_token", token,{
+        res.cookie("accessToken", token,{
                 httpOnly: true,
             })
             .status(200).send(otherInfo)
